@@ -1,0 +1,83 @@
+<div class="container my-5">
+    <div>
+      <h3 class="md-3" style="text-align: center ; color: royalblue; background-color: rgb(152, 204, 228);">EMPLOYEE</h3>
+    </div>
+    
+        <form #form="ngForm" (ngSubmit)="UpdateEmployee()"  class="row g-3 needs-validation" novalidate>
+            
+            <div class="col-md-6">
+              <label for="name" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="name" value=""
+              name="name" [(ngModel)]="employeeDetails.name" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+           
+            <div class="col-md-6">
+              <label for="email" class="form-label">Email</label>
+              <div class="input-group has-validation">
+                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                <input type="email" class="form-control" id="email" aria-describedby="inputGroupPrepend" value=""
+                name="email" [(ngModel)]="employeeDetails.email" required>
+                <div class="invalid-feedback">
+                  Please choose your mail.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="salary" class="form-label">Salary</label>
+              <div class="input-group has-validation">
+                <span class="input-group-text" id="inputGroupPrepend">$</span>
+                <input type="number" class="form-control" id="salary" aria-describedby="inputGroupPrepend" 
+                name="salary" [(ngModel)]="employeeDetails.salary"required>
+                <div class="invalid-feedback">
+                  Please choose your salary.
+                </div>
+              </div>
+              <div class="invalid-feedback">
+                Please provide a valid salary.
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="department" class="form-label">Department</label>
+              <select class="form-select" id="department"  name="department" [(ngModel)]="employeeDetails.department"required>
+                <option selected disabled value="">Choose...</option>
+                <option>Administration/Operations</option>
+                <option>Research and development</option>
+                <option>Marketing and sales</option>
+                <option>Human resources</option>
+                <option>Customer service</option>
+                <option>Accounting And Finance</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid Department.
+              </div>
+            </div>
+            <div class="col-md-4">
+                <label for="validationCustom02" class="form-label">Phone</label>
+                <div class="input-group has-validation">
+                    <span class="input-group-text" id="inputGroupPrepend">#</span>
+                    <input type="number" class="form-control" id="phone" aria-describedby="inputGroupPrepend"  name="phone" [(ngModel)]="employeeDetails.phone" required>
+                    <div class="invalid-feedback">
+                      Please choose your mail.
+                    </div>
+                  </div>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+            </div>
+           
+            <div class="col-6">
+             <div>
+                <button class="btn btn-primary me-2" type="submit">Edit</button>
+              <button class="btn btn-danger" (click)="deleteEmployee(employeeDetails.id)" type="button">Delete</button>
+                               
+            </div>
+            </div>
+          </form>
+          
+    
+    
+</div>
+
